@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
+    let Player_Score = 0;
+    let Computer_Score = 0;
     function computerplay() {
         let x = Math.random();
         let computerselection = ""
@@ -24,21 +26,32 @@
         if (playerselection.toLowerCase() === computerselection) {
             return "Draw"
         } else if (playerselection.toLowerCase() === "rock" && computerselection === "paper") {
+            Computer_Score++
             return "You Lose! Paper beats Rock"
         } else if (playerselection.toLowerCase() === "rock" && computerselection === "scissors") {
+            Player_Score++
             return "You Win! Rock beats Scissors"
         } else if (playerselection.toLowerCase() === "paper" && computerselection === "rock") {
+            Player_Score++
             return "You Win! Paper beats Rock"
         } else if (playerselection.toLowerCase() === "paper" && computerselection === "scissors") {
+            Computer_Score++
             return "You Lose! Scissors beats paper"
         } else if (playerselection.toLowerCase() === "scissors" && computerselection === "rock") {
+            Computer_Score++
             return "You Lose! Rock beats Scissors"
         } else if (playerselection.toLowerCase() === "scissors" && computerselection === "paper") {
+            Player_Score++
             return "You Win! Scissors beats Paper"
         }
     }
-    console.log(ComputerSelction);
-    console.log(playround(prompt("Enter"),ComputerSelction))
+    for (let i=0; i < 5; i++) {
+        console.log(playround(prompt("Enter"),ComputerSelction))
+        console.log(`Player-Score = ${Player_Score}`)
+        console.log(`Computer-Score = ${Computer_Score}`)
+    }
+
+    
     
     </script>
     <title>Document</title>
