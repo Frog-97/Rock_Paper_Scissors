@@ -15,6 +15,8 @@ function computerplay() {
 }
 
 let ComputerSelction = computerplay();
+console.log(ComputerSelction);
+let PlayerSelection = "";
 
 function playround(playerselection, computerselection) {
     if (playerselection.toLowerCase() === computerselection) {
@@ -40,34 +42,42 @@ function playround(playerselection, computerselection) {
     }
 }
 
+let body = document.querySelector("body");
+const btnRock = document.querySelector("#rock");
+const btnPaper = document.querySelector("#paper");
+const btnScissors = document.querySelector("#scissors");
+
+btnRock.addEventListener('click', () => {
+    PlayerSelection = "Rock"
+    console.log(playround(PlayerSelection,ComputerSelction))
+    console.log(`Player-Score = ${Player_Score}`)
+    console.log(`Computer-Score = ${Computer_Score}`)
+    })
+
+btnPaper.addEventListener('click', () => {
+    PlayerSelection = "Paper"
+    console.log(playround(PlayerSelection,ComputerSelction))
+    console.log(`Player-Score = ${Player_Score}`)
+    console.log(`Computer-Score = ${Computer_Score}`)
+    })
+
+btnScissors.addEventListener('click', () => {
+    PlayerSelection = "Scissors"
+    console.log(playround(PlayerSelection,ComputerSelction))
+    console.log(`Player-Score = ${Player_Score}`)
+    console.log(`Computer-Score = ${Computer_Score}`)
+    })
+
+
+
+let output = document.createElement("div");
+body.appendChild(output);
+
+output.textContent = `Player-Score = ${Player_Score}\n
+                      Computer-Score = ${Computer_Score}`;
+
 /*for (let i=0; i < 5; i++) {
     console.log(playround(prompt("Enter"),ComputerSelction))
     console.log(`Player-Score = ${Player_Score}`)
     console.log(`Computer-Score = ${Computer_Score}`)
 }*/
-
-
-
-
-
-
-function computerplay() {
-    let x = Math.random();
-   alert(x);
-    switch (x) {
-        case x <= 0.333 :
-            console.log("Rock");
-            break;
-        
-        case x > 0.333 && x < 0.666 :
-            console.log("Paper");
-            break;
-
-        case x > 0.666 && x < 1 :
-            console.log("Scissors");
-            break;
-    }
-}
-alert(x);
-
-computerplay();
