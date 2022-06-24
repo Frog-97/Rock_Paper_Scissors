@@ -15,7 +15,7 @@ function computerplay() {
 }
 
 let ComputerSelction = computerplay();
-console.log(ComputerSelction);
+//console.log(ComputerSelction);
 let PlayerSelection = "";
 
 function playround(playerselection, computerselection) {
@@ -46,35 +46,72 @@ let body = document.querySelector("body");
 const btnRock = document.querySelector("#rock");
 const btnPaper = document.querySelector("#paper");
 const btnScissors = document.querySelector("#scissors");
+let output = document.createElement("div");
+let output1 = document.createElement("p")
+
+output.textContent = `Player-Score = ${Player_Score} Computer-Score = ${Computer_Score}`;
+output1.textContent = `${Computer_Score} ${Player_Score}`
 
 btnRock.addEventListener('click', () => {
+    ComputerSelction = computerplay()
+    
     PlayerSelection = "Rock"
     console.log(playround(PlayerSelection,ComputerSelction))
     console.log(`Player-Score = ${Player_Score}`)
     console.log(`Computer-Score = ${Computer_Score}`)
+    output.textContent = `Player-Score = ${Player_Score} Computer-Score = ${Computer_Score}`;
+
+    if (Computer_Score === 5) {
+        output1.textContent = `Computer Wins!`
+    } else if (Player_Score === 5) {
+        output1.textContent = `You Win!`
+    }
     })
 
 btnPaper.addEventListener('click', () => {
+    ComputerSelction = computerplay()
     PlayerSelection = "Paper"
     console.log(playround(PlayerSelection,ComputerSelction))
     console.log(`Player-Score = ${Player_Score}`)
     console.log(`Computer-Score = ${Computer_Score}`)
+    output.textContent = `Player-Score = ${Player_Score} Computer-Score = ${Computer_Score}`;
+
+    if (Computer_Score === 5) {
+        output1.textContent = `Computer Wins!`
+    } else if (Player_Score === 5) {
+        output1.textContent = `You Win!`
+    }
     })
 
 btnScissors.addEventListener('click', () => {
+    ComputerSelction = computerplay()
     PlayerSelection = "Scissors"
     console.log(playround(PlayerSelection,ComputerSelction))
     console.log(`Player-Score = ${Player_Score}`)
     console.log(`Computer-Score = ${Computer_Score}`)
+    output.textContent = `Player-Score = ${Player_Score} Computer-Score = ${Computer_Score}`;
+
+    if (Computer_Score === 5) {
+        output1.textContent = `Computer Wins!`
+    } else if (Player_Score === 5) {
+        output1.textContent = `You Win!`
+    }
     })
 
 
 
-let output = document.createElement("div");
 body.appendChild(output);
 
-output.textContent = `Player-Score = ${Player_Score}\n
-                      Computer-Score = ${Computer_Score}`;
+
+
+/*if (Computer_Score === 5) {
+    output1.textContent = `Computer Wins!`
+} else if (Player_Score === 5) {
+    output1.textContent = `You Win!`
+}*/
+
+
+body.appendChild(output1);
 
 /*for (let i=0; i < 5; i++) {
     console.log(playround(prompt("Enter"),ComputerSelction))
